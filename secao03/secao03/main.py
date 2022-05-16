@@ -1,9 +1,9 @@
-from ast import Return
-from distutils.log import debug
-from imp import reload
 from fastapi import FastAPI
 from fastapi import HTTPException
 from fastapi import status 
+from fastapi.responses import JSONResponse
+from fastapi import Response
+from pydantic import Json
 from models import Curso
 
 app = FastAPI()
@@ -53,6 +53,18 @@ async def put_curso(curso_id: int, curso: Curso):
                 detail=f"Não existe um curso com ID {curso.id}"
             )
 
+@app.delete("/cursos/{curso_id}")
+async def delete_curso(curso_id: int):
+    if curso_id in cursos:
+        del cursos[curso_id]
+        
+        return Response(status_code=status.HTTP_204_NO_CONTENT)
+        # return JSONResponse(status_code=status.HTTP_204_NO_CONTENT)
+    else:
+        raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"Não existe um curso com ID {curso_id}"
+        )
 
 
 if __name__ == "__main__":
