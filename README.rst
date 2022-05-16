@@ -1,0 +1,1 @@
+Iniciando estudos de FastAPI
