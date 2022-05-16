@@ -1,0 +1,20 @@
+anyio @ file:///home/p6220086/.cache/pypoetry/artifacts/ec/44/7c/e5dde5ec0fe7d7e8863abb92fe0ba5a4b0312b43ff43540f193ef11fef/anyio-3.6.1-py3-none-any.whl
+asgiref @ file:///home/p6220086/.cache/pypoetry/artifacts/43/e6/fa/43d63c138ceb5a122d5ce7ff17e1e3ad821c68d0b4b00ff99d8202ef09/asgiref-3.5.1-py3-none-any.whl
+attrs @ file:///home/p6220086/.cache/pypoetry/artifacts/9a/27/ab/6895b786f345452394b42c1fdbe863803d0396e675b632c01cb13cad92/attrs-21.4.0-py2.py3-none-any.whl
+click @ file:///home/p6220086/.cache/pypoetry/artifacts/bd/9c/91/fc982221d93312eb60d91ed31ec2945771bec0eb111953316ae8293dce/click-8.1.3-py3-none-any.whl
+fastapi @ file:///home/p6220086/.cache/pypoetry/artifacts/48/d5/35/4184fb764482826d9e84a3aa0f78891914e9d9dc3c73e5f823f758b6f3/fastapi-0.75.2-py3-none-any.whl
+h11 @ file:///home/p6220086/.cache/pypoetry/artifacts/bc/d7/e2/6d144112b0c47a5ee4e22c53b271dc73b63c1e64e15aca149164758406/h11-0.13.0-py3-none-any.whl
+idna @ file:///home/p6220086/.cache/pypoetry/artifacts/f7/09/c9/8e80952436ff87855ddff4891a35ecf913b2b5dc97911f02a070ff2b1f/idna-3.3-py3-none-any.whl
+more-itertools @ file:///home/p6220086/.cache/pypoetry/artifacts/5a/82/a3/1f05f9a59868424b35fcbc5fbad91be09d059bd688daff5cfc46e2017b/more_itertools-8.13.0-py3-none-any.whl
+packaging @ file:///home/p6220086/.cache/pypoetry/artifacts/7f/d5/4c/1d3c4776012fc0bbe1f86e69bde2c5e36d2d32caa2e4845ac1fc08ab3f/packaging-21.3-py3-none-any.whl
+pluggy @ file:///home/p6220086/.cache/pypoetry/artifacts/9c/e5/0b/2d64d03361a081edeb5d2ec5f286ccf9719587781fbf6822e1b6384c27/pluggy-0.13.1-py2.py3-none-any.whl
+py @ file:///home/p6220086/.cache/pypoetry/artifacts/ab/b4/c3/a3971fd0d6ab5a2e40a43ad7b809005422d7cf333f7be6ccdfe9002e1b/py-1.11.0-py2.py3-none-any.whl
+pydantic @ file:///home/p6220086/.cache/pypoetry/artifacts/98/35/5c/34da00fdd0cfe3b76503325a96ea4d2313ceb365e3e522d00d9b39cf7d/pydantic-1.9.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+pyparsing @ file:///home/p6220086/.cache/pypoetry/artifacts/4a/b9/34/28557b740fb51bd635f6794a95d02e23de02724e07f03c3ad49cebcf86/pyparsing-3.0.9-py3-none-any.whl
+pytest @ file:///home/p6220086/.cache/pypoetry/artifacts/9d/40/6b/50d2cb06df545acea43c65379c5456f4fbc703115a703bc7cd433ddf70/pytest-5.4.3-py3-none-any.whl
+secao02==0.1.0
+sniffio @ file:///home/p6220086/.cache/pypoetry/artifacts/d0/91/b7/e6203dd46faa656f9ddf9a16cfbc3e51a56fa709d69642affedb2e0eff/sniffio-1.2.0-py3-none-any.whl
+starlette @ file:///home/p6220086/.cache/pypoetry/artifacts/87/0f/66/b3afc6fcd3ad50262f82f503cd78e1eab19237ab417cf4c564a6d33e25/starlette-0.17.1-py3-none-any.whl
+typing_extensions @ file:///home/p6220086/.cache/pypoetry/artifacts/18/72/6c/690f7427f477807a9597dee26e599e0e73d1aa5fa12a06fa5ed704b967/typing_extensions-4.2.0-py3-none-any.whl
+uvicorn @ file:///home/p6220086/.cache/pypoetry/artifacts/a2/ff/79/8a3b922b9503477cb5389145687486c86ba435d1a54d9d62db03ccdd96/uvicorn-0.17.6-py3-none-any.whl
+wcwidth @ file:///home/p6220086/.cache/pypoetry/artifacts/36/68/e2/7232f431072d5e8aeec124120b9a1d095d45da10311d271fac10982473/wcwidth-0.2.5-py2.py3-none-any.whl
