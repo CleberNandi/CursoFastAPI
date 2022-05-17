@@ -37,12 +37,12 @@ async def get_curso(
     except KeyError:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Curso não encontrado.")
 
-@app.post("/cursos", status_code=status.HTTP_201_CREATED, response_model=List[Curso])
-async def post_curso(curso: Curso):
-    next_curso:int =  len(cursos) + 1
-    cursos[next_curso] = curso
-    del curso.id
-    return curso
+# @app.post("/cursos", status_code=status.HTTP_201_CREATED, response_model=List[Curso])
+# async def post_curso(curso: Curso):
+#     next_curso:int =  len(cursos) + 1
+#     cursos[next_curso] = curso
+#     del curso.id
+#     return curso
     
 @app.put("/cursos/{curso_id}")
 async def put_curso(curso_id: int, curso: Curso):
