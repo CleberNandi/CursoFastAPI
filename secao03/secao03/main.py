@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Dict, List
 from fastapi import FastAPI
 from fastapi import HTTPException
 from fastapi import status 
@@ -7,6 +7,7 @@ from fastapi import Response
 from fastapi import Path
 from fastapi import Depends
 from pydantic import Json
+from models import cursos
 from models import Curso
 
 from time import sleep
@@ -19,27 +20,21 @@ def fake_db():
         print(f"Fechando conexao com banco de dados")
         sleep(1)
         
-app = FastAPI()
+app = FastAPI(
+    title="API de curso da Geek University",
+    version="0.0.1",
+    description="API criada para estudar FastAPI"
+)
 
 
-cursos = {
-    1:{
-        "titulo": "Programação para Leigos",
-        "aulas": 112,
-        "horas": 58
-    },
-    2:{
-        "titulo": "Algoritimos e Lógica de Programação",
-        "aulas": 87,
-        "horas": 67
-    }
-}
-
-@app.get("/cursos")
+@app.get(
+    "/cursos",
+    response_model=List[Curso],
+    response_description="Cursos encontrados com sucesso.")
 async def get_cursos(db: Any = Depends(fake_db)):
     return cursos
 
-@app.get("/cursos/{curso_id}")
+@app.get("/cursos/{curso_id}", response_model=List[Curso])
 async def get_curso(
     curso_id: int = Path(
         default=None,
@@ -53,7 +48,7 @@ async def get_curso(
     except KeyError:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Curso não encontrado.")
 
-@app.post("/cursos", status_code=status.HTTP_201_CREATED)
+@app.post("/cursos", status_code=status.HTTP_201_CREATED, response_model=List[Curso])
 async def post_curso(curso: Curso):
     next_curso:int =  len(cursos) + 1
     cursos[next_curso] = curso
@@ -68,9 +63,9 @@ async def put_curso(curso_id: int, curso: Curso):
         return curso
     else:
         raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail=f"Não existe um curso com ID {curso.id}"
-            )
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Não existe um curso com ID {curso.id}"
+        )
 
 @app.delete("/cursos/{curso_id}")
 async def delete_curso(curso_id: int):
@@ -81,8 +76,8 @@ async def delete_curso(curso_id: int):
         # return JSONResponse(status_code=status.HTTP_204_NO_CONTENT)
     else:
         raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail=f"Não existe um curso com ID {curso_id}"
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Não existe um curso com ID {curso_id}"
         )
 
 @app.get("/calculadora")
