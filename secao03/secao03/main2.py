@@ -1,4 +1,4 @@
-from email.mime import image
+from operator import imod
 from typing import Any, Dict, List
 from fastapi import FastAPI
 from fastapi import HTTPException
@@ -10,16 +10,9 @@ from fastapi import Depends
 from pydantic import Json
 from models import cursos
 from models import Curso
+from routs.curso_router import curso_router
 
 from time import sleep
-
-def fake_db():
-    try:
-        print(f"Abrindo conexão com banco de dados")
-        sleep(4)
-    finally:
-        print(f"Fechando conexao com banco de dados")
-        sleep(1)
         
 app = FastAPI(
     title="API de curso da Geek University",
@@ -28,12 +21,7 @@ app = FastAPI(
 )
 
 
-@app.get(
-    "/cursos",
-    response_model=List[Curso],
-    response_description="Cursos encontrados com sucesso.")
-async def get_cursos(db: Any = Depends(fake_db)):
-    return cursos
+app.include_router(curso_router, tags=["cursos"] )
 
 @app.get("/cursos/{curso_id}", response_model=List[Curso])
 async def get_curso(
@@ -91,7 +79,7 @@ if __name__ == "__main__":
     import uvicorn
     
     uvicorn.run(
-        "main:app",
+        "main2:app",
         host="127.0.0.1",
         port=8000,
         reload=True,
