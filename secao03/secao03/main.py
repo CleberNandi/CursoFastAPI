@@ -3,6 +3,7 @@ from fastapi import HTTPException
 from fastapi import status 
 from fastapi.responses import JSONResponse
 from fastapi import Response
+from fastapi import Path
 from pydantic import Json
 from models import Curso
 
@@ -27,7 +28,13 @@ async def get_cursos():
     return cursos
 
 @app.get("/cursos/{curso_id}")
-async def get_curso(curso_id: int):
+async def get_curso(
+    curso_id: int = Path(
+        default=None,
+        title="ID do curso",
+        description="Deve ser entre 1 e 2", gt=0, lt=3
+    )
+):
     try:
         curso = cursos[curso_id]
         return curso
