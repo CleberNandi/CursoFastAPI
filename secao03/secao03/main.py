@@ -73,6 +73,11 @@ async def delete_curso(curso_id: int):
                 detail=f"Não existe um curso com ID {curso_id}"
         )
 
+@app.get("/calculadora")
+async def calcular(a: int, b: int, c: int):
+    soma = a+b+c
+    return {"resultado": soma}
+
 
 if __name__ == "__main__":
     import uvicorn
