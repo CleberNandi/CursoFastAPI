@@ -1,12 +1,24 @@
+from typing import Any
 from fastapi import FastAPI
 from fastapi import HTTPException
 from fastapi import status 
 from fastapi.responses import JSONResponse
 from fastapi import Response
 from fastapi import Path
+from fastapi import Depends
 from pydantic import Json
 from models import Curso
 
+from time import sleep
+
+def fake_db():
+    try:
+        print(f"Abrindo conexão com banco de dados")
+        sleep(4)
+    finally:
+        print(f"Fechando conexao com banco de dados")
+        sleep(1)
+        
 app = FastAPI()
 
 
@@ -24,7 +36,7 @@ cursos = {
 }
 
 @app.get("/cursos")
-async def get_cursos():
+async def get_cursos(db: Any = Depends(fake_db)):
     return cursos
 
 @app.get("/cursos/{curso_id}")
