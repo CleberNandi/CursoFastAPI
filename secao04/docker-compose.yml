@@ -6,12 +6,6 @@ services:
       - "5434:5432"
     environment:
       POSTGRES_PASSWORD: test
-  db2:
-    image: postgres
-    ports:
-      - "5435:5432"
-    environment:
-      POSTGRES_PASSWORD: test
 
 networks:
   default:

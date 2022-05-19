@@ -21,7 +21,7 @@ router = APIRouter()
 async def post_curso(curso: CursoSchema, db: AsyncSession = Depends(get_session)):
     novo_curso = CursoModel(titulo=curso.titulo, aulas=curso.aulas, horas=curso.aulas)
     
-    db.add()(novo_curso)
+    db.add(novo_curso)
     await db.commit()
     
     return novo_curso
